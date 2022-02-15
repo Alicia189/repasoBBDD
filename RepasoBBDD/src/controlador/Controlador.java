@@ -7,21 +7,10 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import conexion.FuncionesBD;
-import dao.AutorDAO;
-import dao.AutorLibroDAO;
-import dao.EditorialDAO;
-import dao.LibroDAO;
-import modelo.Autor;
-import modelo.Editorial;
-import modelo.Libro;
-import vista.AñadirAutor;
-import vista.AñadirEditorial;
-import vista.DialogoEditoriales;
-import vista.VentanaAutores;
-import vista.VentanaAñadirLibro;
-import vista.VentanaLibros;
-import vista.VentanaPpal;
+import dao.IdiomaDAO;
+import vista.VentanaIdiomas;
+
+
 
 /**
  * @author David
@@ -30,30 +19,32 @@ import vista.VentanaPpal;
 public class Controlador {
 
 	// VEntanas del sistema
-	private VentanaPpal ventanaPpal;
+	private VentanaIdiomas ventanaidiomas;
 
 	
 	// Objetos DAO o CRUD de la base de datos
-	private EditorialDAO editorialDAO;
+	private IdiomaDAO idiomaDAO;
 
 	
 	public Controlador() {
 		// Creamos las ventanas de la aplicación
-		ventanaPpal = new VentanaPpal();
+		ventanaidiomas = new VentanaIdiomas();
 
 		
 		// Dando acceso al controlador desde las vistas
-		ventanaPpal.setControlador(this);
+		ventanaidiomas.setControlador(this);
 
 		
 		// Creamos los objetos DAO
-		editorialDAO = new EditorialDAO();
+		idiomaDAO = new IdiomaDAO();
 
 	}
 	
 	public void inciarPrograma() {
-		ventanaPpal.setVisible(true);
+		ventanaidiomas.setVisible(true);
 	}
+
+	
 	
 	
 }
