@@ -13,9 +13,9 @@ import java.sql.SQLException;
  */
 public class ConexionBD {
 
-	private static final String database = "biblioteca";
-	private static final String usuario = "biblioteca";
-	private static final String contraseña = "123456";
+	private static final String database = "sakila_es";
+	private static final String usuario = "sakila";
+	private static final String contraseña = "1234";
 	private static final String url="jdbc:mysql://localhost/"+database;
 	
 	private Connection conexion=null;
@@ -31,7 +31,7 @@ public class ConexionBD {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			conexion = DriverManager.getConnection(url, usuario, contraseña);
-			System.out.println("Conexion a bilioteca correcta");
+			System.out.println("Conexion a sakila_es correcta");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Driver no registrado");
 		} catch (SQLException e) {
