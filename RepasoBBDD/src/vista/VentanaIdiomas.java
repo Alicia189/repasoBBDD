@@ -17,9 +17,8 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import controlador.Controlador;
-import modelo.idioma;
+import modelo.Idioma;
 import net.miginfocom.swing.MigLayout;
-
 
 public class VentanaIdiomas extends JFrame {
 
@@ -92,10 +91,10 @@ public class VentanaIdiomas extends JFrame {
 		
 	}
 
-	public void setListaAutores(ArrayList<idioma> lista) {
+	public void setListaIdiomas(ArrayList<Idioma> lista) {
 		DefaultTableModel modelo = (DefaultTableModel) table.getModel();
 		modelo.setRowCount(0);
-		for (idioma idioma : lista) {
+		for (Idioma idioma : lista) {
 			Object [] fila = {
 					idioma.getId_idioma(), idioma.getNombre()
 			};

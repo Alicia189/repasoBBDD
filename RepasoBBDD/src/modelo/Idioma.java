@@ -2,11 +2,11 @@ package modelo;
 
 import java.util.Objects;
 
-public class idioma {
+public class Idioma {
 	private int id_idioma;
 	private String nombre;
 	
-	public idioma(int id_idioma, String nombre) {
+	public Idioma(int id_idioma, String nombre) {
 		super();
 		this.id_idioma=id_idioma;
 		this.nombre=nombre;
@@ -41,7 +41,7 @@ public class idioma {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		idioma other = (idioma) obj;
+		Idioma other = (Idioma) obj;
 		return id_idioma == other.id_idioma;
 	}
 
@@ -50,5 +50,4 @@ public class idioma {
 		return "idioma [id_idioma=" + id_idioma + ", nombre=" + nombre + "]";
 	}
 	
-
 }

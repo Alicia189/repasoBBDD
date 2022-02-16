@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controlador.Controlador;
 import modelo.Alquiler;
+import modelo.Idioma;
 import net.miginfocom.swing.MigLayout;
 
 public class VentanaMostrarAlquiler extends JFrame {
@@ -88,7 +89,18 @@ public class VentanaMostrarAlquiler extends JFrame {
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
-	
-	
 
+	public void setListaAlquiler(ArrayList<Alquiler> lista) {
+		DefaultTableModel modelo = (DefaultTableModel) tablaListado.getModel();
+		modelo.setRowCount(0);
+		for (Alquiler alquiler : lista) {
+			Object [] fila = {
+					alquiler.getIdAlquiler(), alquiler.getFechaAlquiler(), alquiler.getIdInventario(),
+					alquiler.getIdCliente(), alquiler.getFechaDevolucion(), alquiler.getIdEmpleado()
+			};
+			modelo.addRow(fila);
+		}
+	}
+	
+	
 }

@@ -14,8 +14,11 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import controlador.Controlador;
+import modelo.Alquiler;
+import modelo.Ciudad;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class VentanaMostrarCiudad extends JFrame {
@@ -89,4 +92,15 @@ public class VentanaMostrarCiudad extends JFrame {
 		this.controlador = controlador;
 	}
 
+	public void setListaCidades(ArrayList<Ciudad> lista) {
+		DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+		modelo.setRowCount(0);
+		for (Ciudad ciudad : lista) {
+			Object [] fila = {
+					ciudad.getId_ciudad(),ciudad.getNombre(), ciudad.getId_pais()
+			};
+			modelo.addRow(fila);
+		}
+		
+	}
 }

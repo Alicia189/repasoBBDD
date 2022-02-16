@@ -7,8 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import conexion.ConexionBD;
-import modelo.idioma;
-
+import modelo.Idioma;
 
 public class IdiomaDAO {
 	
@@ -17,12 +16,12 @@ public class IdiomaDAO {
 	public IdiomaDAO() {
 		this.conexion= new ConexionBD();
 	}
-	 public ArrayList<idioma> obtenerIdioma() {
+	 public ArrayList<Idioma> obtenerIdioma() {
 	    	// Obtenemos una conexion a la base de datos.
 			Connection con = conexion.getConexion();
 			Statement consulta = null;
 			ResultSet resultado = null;
-			ArrayList<idioma> lista = new ArrayList<idioma>();
+			ArrayList<Idioma> lista = new ArrayList<Idioma>();
 			
 			try {
 				consulta = con.createStatement();
@@ -33,7 +32,7 @@ public class IdiomaDAO {
 					int id_idioma = resultado.getInt("id_idioma");
 					String nombre = resultado.getString("nombre");
 					
-					idioma i = new idioma(id_idioma,nombre);
+					Idioma i = new Idioma(id_idioma,nombre);
 					lista.add(i);
 				}
 				

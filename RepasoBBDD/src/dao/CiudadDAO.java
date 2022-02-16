@@ -27,7 +27,6 @@ public class CiudadDAO {
         
     }
 
-
     public ArrayList<Ciudad> obtenerCiudades() {
     	// Obtenemos una conexion a la base de datos.
 		Connection con = conexion.getConexion();

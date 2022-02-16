@@ -5,7 +5,6 @@ package controlador;
 
 import java.util.ArrayList;
 
-
 import dao.ActorDAO;
 import dao.AlmacenDAO;
 import dao.AlquilerDAO;
@@ -17,7 +16,9 @@ import dao.DireccionDAO;
 //import dao.AutorLibroDAO;
 //import dao.EditorialDAO;
 import dao.EmpleadoDAO;
+import dao.IdiomaDAO;
 import dao.PeliculaDAO;
+import modelo.Actor;
 import modelo.Almacen;
 import modelo.Alquiler;
 import modelo.Ciudad;
@@ -27,11 +28,13 @@ import modelo.Direccion;
 //import modelo.Autor;
 //import modelo.Editorial;
 import modelo.Empleado;
+import modelo.Idioma;
 import modelo.Pelicula;
 import vista.MostrarAlmacen;
 import vista.MostrarPelicula;
 import vista.VentanaActores;
 import vista.VentanaEmpleado;
+import vista.VentanaIdiomas;
 import vista.VentanaMostrarAlquiler;
 import vista.VentanaMostrarCiudad;
 import vista.VentanaMostrarDireccion;
@@ -52,6 +55,7 @@ public class Controlador {
 	private MostrarPelicula mostrarPelicula;
 	private VentanaActores ventanaActores;
 	private VentanaEmpleado ventanaEmpleado;
+	private VentanaIdiomas ventanaIdiomas;
 	private VentanaMostrarAlquiler ventanaMostrarAlquiler;
 	private VentanaMostrarCiudad ventanaMostrarCiudad;
 	private VentanaMostrarDireccion ventanaMostrarDireccion;
@@ -68,6 +72,7 @@ public class Controlador {
 	private DireccionDAO direccionDAO;
 	private EmpleadoDAO empleadoDAO;
 	private PeliculaDAO peliculaDAO;
+	private IdiomaDAO idiomaDAO;
 
 
 	
@@ -83,7 +88,7 @@ public class Controlador {
 		ventanaMostrarCiudad = new VentanaMostrarCiudad();
 		ventanaMostrarDireccion = new VentanaMostrarDireccion();
 		vistaMostrarCliente = new VistaMostrarCliente();
-		
+		ventanaIdiomas = new VentanaIdiomas();
 		
 		// Dando acceso al controlador desde las vistas
 		ventanaPpal.setControlador(this);
@@ -95,6 +100,7 @@ public class Controlador {
 		ventanaMostrarCiudad.setControlador(this);
 		ventanaMostrarDireccion.setControlador(this);
 		vistaMostrarCliente.setControlador(this);
+		ventanaIdiomas.setControlador(this);
 
 		
 		// Creamos los objetos DAO
@@ -107,30 +113,31 @@ public class Controlador {
 		clienteDAO = new ClienteDAO();
 		empleadoDAO = new EmpleadoDAO();
 		peliculaDAO = new PeliculaDAO();
+		idiomaDAO = new IdiomaDAO();
 
 	}
 	
 	public void inciarPrograma() {
-		ventanaidiomas.setVisible(true);
+		ventanaPpal.setVisible(true);
 	}
 
 	
 	
 	public void mostrarAlmacen() {
 		ArrayList<Almacen> lista = almacenDAO.obtenerAlmacen();
-		mostrarAlmacen.setListaAlmacenes(lista);;
+		mostrarAlmacen.setListaAlmacen(lista);
 		mostrarAlmacen.setVisible(true);
 	}
 	
 	public void mostrarPelicula() {
 		ArrayList<Pelicula> lista = peliculaDAO.obtenerPelicula();
-		mostrarPelicula.setListaPeliculas(lista);;
+		mostrarPelicula.setListaPelicula(lista);
 		mostrarPelicula.setVisible(true);
 	}
 	
 	public void mostrarActores() {
-		ArrayList<Almacen> lista = almacenDAO.obtenerAlmacen();
-		ventanaActores.setListaAlmacenes(lista);;
+		ArrayList<Actor> lista = actorDAO.obtenerActor();
+		ventanaActores.setListaActores(lista);
 		ventanaActores.setVisible(true);
 	}
 	
@@ -153,16 +160,24 @@ public class Controlador {
 	}
 	
 	public void mostrarDireccion() {
-		ArrayList<Direccion> lista = direccionDAO.obtenerDirecciones()
+		ArrayList<Direccion> lista = direccionDAO.obtenerDirecciones();
 		ventanaMostrarDireccion.setListaDireccion(lista);
 		ventanaMostrarDireccion.setVisible(true);
 	}
 	
 	public void mostrarCliente() {
-		ArrayList<Cliente> lista = clienteDAO.obtenerCliente()
+		ArrayList<Cliente> lista = clienteDAO.obtenerCliente();
 		vistaMostrarCliente.setListaCliente(lista);
 		vistaMostrarCliente.setVisible(true);
 	}
+
+	public void mostrarIdioma() {
+		ArrayList<Idioma> lista = idiomaDAO.obtenerIdioma();
+		ventanaIdiomas.setListaIdiomas(lista);;
+		ventanaIdiomas.setVisible(true);
+		
+	}
+	
 	
 	
 }

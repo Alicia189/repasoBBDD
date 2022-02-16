@@ -37,11 +37,11 @@ public class PeliculaDAO {
 		
 		try {
 			consulta = con.createStatement();
-			resultado = consulta.executeQuery("select * from autores");
+			resultado = consulta.executeQuery("select * from pelicula");
 			
 			// Bucle para recorrer todas las filas que devuelve la consulta
 			while(resultado.next()) {
-				int idPelicula = resultado.getInt("idAutor");
+				int idPelicula = resultado.getInt("id_pelicula");
 				String titulo = resultado.getString("titulo");
 				String descripcion = resultado.getString("descripcion");
 				int anyoLanzamiento = resultado.getInt("anyo_lanzamiento");
@@ -51,7 +51,6 @@ public class PeliculaDAO {
 				float rentalRate = resultado.getFloat("rental_rate");
 				int duracion = resultado.getInt("duracion");
 				float replacementCost =resultado.getFloat("replacement_cost");
-			
 				
 				
 				Pelicula p = new Pelicula(idPelicula, titulo, descripcion, anyoLanzamiento, idIdioma, idIdiomaOriginal, duracionAlquiler, rentalRate, duracion, replacementCost);

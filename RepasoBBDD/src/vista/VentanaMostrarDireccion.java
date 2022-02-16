@@ -93,7 +93,7 @@ public class VentanaMostrarDireccion extends JFrame {
 	
 	
 
-	public void setListaLibros(ArrayList<Direccion> listaDirecciones) {
+	public void setListaDireccion(ArrayList<Direccion> listaDirecciones) {
 		DefaultTableModel modelo = (DefaultTableModel) table.getModel();
 		modelo.setRowCount(0);
 		for (Direccion d : listaDirecciones) {
@@ -109,6 +109,5 @@ public class VentanaMostrarDireccion extends JFrame {
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
-
 
 }

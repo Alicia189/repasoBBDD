@@ -37,13 +37,13 @@ public class AlmacenDAO {
 		ArrayList<Almacen> lista = new ArrayList<Almacen>();
 		try {
 			consulta = con.createStatement();
-			resultado = consulta.executeQuery("select * from almacén");
+			resultado = consulta.executeQuery("select * from almacen");
 			
 // Bucle para recorrer todas las filas que devuelve la consulta
 			while (resultado.next()) {
-				int idAlmacen = resultado.getInt("idAlmacen");
-				int idEmpleadoJefe = resultado.getInt("idEmpleadoJefe");
-				int idDireccion = resultado.getInt("idDireccion");
+				int idAlmacen = resultado.getInt("id_Almacen");
+				int idEmpleadoJefe = resultado.getInt("id_Empleado_Jefe");
+				int idDireccion = resultado.getInt("id_Direccion");
 				
 				Almacen al = new Almacen(idAlmacen, idEmpleadoJefe, idDireccion);
 				lista.add(al);

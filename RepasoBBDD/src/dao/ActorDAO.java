@@ -25,11 +25,11 @@ public class ActorDAO {
 	    		ArrayList<Actor> lista = new ArrayList<Actor>();
 	    		try {
 	    			consulta = con.createStatement();
-	    			resultado = consulta.executeQuery("select * from actores");
+	    			resultado = consulta.executeQuery("select * from actor");
 	    			
 	    			// Bucle para recorrer todas las filas que devuelve la consulta
 	    			while(resultado.next()) {
-	    				int idActor= resultado.getInt("idActor");
+	    				int idActor= resultado.getInt("id_Actor");
 	    				String nombre = resultado.getString("nombre");
 	    				String ape = resultado.getString("apellidos");
 	    				
@@ -147,6 +147,4 @@ public class ActorDAO {
 	    			}
 	    			return resultado;
 	    	    }
-
-
 }

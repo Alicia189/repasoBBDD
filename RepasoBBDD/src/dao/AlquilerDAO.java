@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import conexion.ConexionBD;
 import modelo.Alquiler;
 
+
 /**
  * @author Jose
  *
@@ -21,6 +22,10 @@ public class AlquilerDAO {
 	
 	//CONEXION CON LA BBDD
 	private static ConexionBD conexion;
+	
+	public AlquilerDAO() {
+		this.conexion = new ConexionBD();
+	}
 	
 	public static ArrayList<Alquiler> mostrarAlquiler() {
 		
