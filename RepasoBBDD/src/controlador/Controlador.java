@@ -5,6 +5,7 @@ package controlador;
 
 import java.util.ArrayList;
 
+
 import dao.ActorDAO;
 import dao.AlmacenDAO;
 import dao.AlquilerDAO;
@@ -44,6 +45,7 @@ import vista.VistaMostrarCliente;
 public class Controlador {
 
 	// VEntanas del sistema
+
 	//private VentanaPpal ventanaPpal;
 	private VentanaPpal ventanaPpal;
 	private MostrarAlmacen mostrarAlmacen;
@@ -67,9 +69,11 @@ public class Controlador {
 	private EmpleadoDAO empleadoDAO;
 	private PeliculaDAO peliculaDAO;
 
+
 	
 	public Controlador() {
-		// Creamos las ventanas de la aplicación
+		// Creamos las ventanas de la aplicaciÃ³n
+
 		ventanaPpal = new VentanaPpal();
 		mostrarAlmacen = new MostrarAlmacen();
 		mostrarPelicula = new MostrarPelicula();
@@ -107,8 +111,10 @@ public class Controlador {
 	}
 	
 	public void inciarPrograma() {
-		ventanaPpal.setVisible(true);
+		ventanaidiomas.setVisible(true);
 	}
+
+	
 	
 	public void mostrarAlmacen() {
 		ArrayList<Almacen> lista = almacenDAO.obtenerAlmacen();
