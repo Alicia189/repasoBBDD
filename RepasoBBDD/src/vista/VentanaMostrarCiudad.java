@@ -12,13 +12,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import controlador.Controlador;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ventanaMostrarCiudad extends JFrame {
+public class VentanaMostrarCiudad extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private Controlador controlador;
 
 	/**
 	 * Launch the application.
@@ -27,7 +31,7 @@ public class ventanaMostrarCiudad extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ventanaMostrarCiudad frame = new ventanaMostrarCiudad();
+					VentanaMostrarCiudad frame = new VentanaMostrarCiudad();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +43,7 @@ public class ventanaMostrarCiudad extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ventanaMostrarCiudad() {
+	public VentanaMostrarCiudad() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -79,6 +83,10 @@ public class ventanaMostrarCiudad extends JFrame {
 		});
 		
 		contentPane.add(btnNewButton, "cell 2 2,alignx center");
+	}
+
+	public void setControlador(Controlador controlador) {
+		this.controlador = controlador;
 	}
 
 }
